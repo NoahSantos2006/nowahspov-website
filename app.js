@@ -5,7 +5,7 @@ const { JSDOM } = require("jsdom");
 
 const app = express();
 
-const htmlPath = path.join(__dirname + "/public/test.html")
+const htmlPath = path.join(__dirname + "/public/index.html")
 const html = fs.readFileSync(htmlPath, "utf-8"); //allows for functions like .appendChild
 const dom = new JSDOM(html); //DOM = Document Object Model
 const document = dom.window.document; // allows for document.__
@@ -49,4 +49,5 @@ app.use((req, res) => { // if the status of the request is 404
 })
 app.listen(3000, () => { //logs the console if the html page launches
     console.log("App listening on port 3000")
+
 })
