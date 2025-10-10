@@ -29,6 +29,7 @@ fs.readdir(dirPath, (err, files) => { //iterates through the /public/all photos/
         const container = document.createElement('div');
 
         container.classList.add('grid-item');
+        container.classList.add('fade-on-scroll');
 
         container.appendChild(img);
 
@@ -51,3 +52,4 @@ app.listen(3000, () => { //logs the console if the html page launches
     console.log("App listening on port 3000")
 
 })
+
