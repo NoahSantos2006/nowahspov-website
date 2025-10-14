@@ -93,3 +93,33 @@ h4 {
 a {
     text-decoration: none;
 }
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-section {
+    background-color: #a9ba9d;
+    height: 300px;
+    width: 100vw;
+    transform: translateY(100px);
+}
+
+.hide {
+    display: none;
+}
+
+.lightbox {
+    position: fixed;
+    z-index: 999;
+}
+.lightbox-img {
+    text-align: center;
+}
+.lightbox-img img {
+    width: 60vw;
+    height: auto;
+}
