@@ -13,7 +13,7 @@ const document = dom.window.document; // allows for document.__
 const dirPath = path.join(__dirname + "/public/all photos");
 const grid = document.getElementsByClassName('grid')[0];
 grid.innerHTML = "";
-
+const arr = []
 fs.readdir(dirPath, (err, files) => { //iterates through the /public/all photos/ folder
     if (err) {
         return console.error("Unable to scan directory: " + err);
@@ -22,22 +22,27 @@ fs.readdir(dirPath, (err, files) => { //iterates through the /public/all photos/
         const photosDirUrl = "/all photos";
         const imgUrl = encodeURI(`${photosDirUrl}/${file}`); //encodes the whole URL
 
+        const btn = document.createElement('button');
+        btn.classList.add('clickable');
+
         const img = document.createElement('img');
         img.src = imgUrl;
         img.alt = imgUrl;
+        arr.push(imgUrl);
 
         const container = document.createElement('div');
 
         container.classList.add('grid-item');
-        container.classList.add('fade-on-scroll');
+        container.classList.add('fade-on-scroll')
 
-        container.appendChild(img);
+        container.appendChild(btn);
+        btn.appendChild(img)
 
         const grid = document.getElementsByClassName('grid')[0];
         grid.appendChild(container);
 
     });
-
+    document.getElementsByClassName('grid_container')[0] .appendChild(grid)
     fs.writeFileSync(htmlPath, dom.serialize(), 'utf-8'); //dom.serialize() take the in-memory of DOM and coverts it back into a string of HTML
 });
 
@@ -50,6 +55,4 @@ app.use((req, res) => { // if the status of the request is 404
 })
 app.listen(3000, () => { //logs the console if the html page launches
     console.log("App listening on port 3000")
-
 })
-
