@@ -42,7 +42,7 @@ fs.readdir(dirPath, (err, files) => { //iterates through the /public/all photos/
         grid.appendChild(container);
 
     });
-    document.getElementsByClassName('grid_container')[0] .appendChild(grid)
+    document.getElementsByClassName('grid_container')[0].appendChild(grid)
     fs.writeFileSync(htmlPath, dom.serialize(), 'utf-8'); //dom.serialize() take the in-memory of DOM and coverts it back into a string of HTML
 });
 
@@ -56,3 +56,4 @@ app.use((req, res) => { // if the status of the request is 404
 app.listen(3000, () => { //logs the console if the html page launches
     console.log("App listening on port 3000")
 })
+
