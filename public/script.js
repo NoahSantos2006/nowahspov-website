@@ -3,15 +3,18 @@ const observer = new IntersectionObserver(entries => { // Intersection Overserve
     if (entry.isIntersecting) { // When the element becomes visible
       entry.target.classList.add('visible'); // adds 'visible' class to the img
     }
-    else {
+    else { //when the element is no longer visible
         entry.target.classList.remove('visible');
     }
   });
 });
 
+
 document.querySelectorAll('.fade-on-scroll').forEach(img => { // selects all elements that have the class .fade-on-scroll
   observer.observe(img);
 });
+
+// the function for determining the order of the lightbox images
 
 let arr_src = []
 let order = [];
@@ -77,14 +80,10 @@ function galleryOrder() {
   }
 }
 
-
+// whenever the document loads or resizes, a new gallery order is created in case x, y changes in the broswer
 ['load', 'resize'].forEach(event => {
   window.addEventListener(event, galleryOrder);
 });
-
-window.onload = function() {
-  console.log(order[0])
-}
 
 //makes the index-header fade out when the bottom section is reached
 window.addEventListener('scroll', () => { 
@@ -101,6 +100,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// when the user chooses an image for the lightbox
 document.querySelectorAll('.grid-item').forEach(item => {
 
   item.addEventListener('click', () => {
@@ -109,11 +109,54 @@ document.querySelectorAll('.grid-item').forEach(item => {
     const src = img.getAttribute('src')
     const lightbox_image_container = document.querySelector('.lightbox-img')
     const lightbox_img = lightbox_image_container.querySelector('img')
+    const lightbox = document.querySelector('.lightbox')
+
+    const overlay = document.querySelector('.overlay');
+
     lightbox_img.src = src
 
-    const lightbox = document.querySelector('.lightbox')
-    lightbox.classList.remove('hide')
-    
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    lightbox.style.display = 'flex';
+
+    let index = 0;
+    for (let [i, val] of order.entries()) { 
+      if (val == lightbox_img.src) {
+        index = i
+        break;
+      }
+    }
+    const right_arrow = document.querySelector('.right-arrow')
+    const left_arrow = document.querySelector('.left-arrow')
+
+    right_arrow.addEventListener('click', () => {
+      if (index + 1 >= order.length) {
+        index = 0
+        lightbox_img.src = order[0]
+      } else {
+        lightbox_img.src = order[index + 1]
+        index += 1
+      }
+    })
+    left_arrow.addEventListener('click', () => {
+      if (index - 1 < 0) {
+        index = order.length - 1
+        lightbox_img.src = order[order.length - 1]
+      } else {
+        lightbox_img.src = order[index - 1]
+        index -= 1
+      }
+    })
     
   })
 })
+
+// makes it so the browser behind the lightbox image darkens
+document.querySelector('.overlay').addEventListener('click', () => {
+    const lightbox = document.querySelector('.lightbox')
+    lightbox.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+    document.body.style.overflow = 'visible'
+})
+
