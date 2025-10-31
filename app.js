@@ -1,0 +1,61 @@
+const express = require('express'); // used to create and run the web server
+const path = require('path'); // helps builds file paths safely for all operating systems
+const fs = require('fs'); // used to read/write files and directories
+const { JSDOM } = require("jsdom"); // library that simulates a browser DOM (Document Object Model) inside Node.js, so I can manipulate HTML like in a browser
+
+// A DOM is how a web page becomes something JavaScript can interact with
+
+const app = express();
+
+const htmlPath = path.join(__dirname + "/public/index.html")
+const html = fs.readFileSync(htmlPath, "utf-8"); // allows for functions like .appendChild
+const dom = new JSDOM(html); //DOM = Document Object Model
+const document = dom.window.document; // allows for document.__
+
+const dirPath = path.join(__dirname + "/public/index-photos");
+const grid = document.getElementsByClassName('grid')[0];
+grid.innerHTML = "";
+const arr = []
+
+fs.readdir(dirPath, (err, files) => { //iterates through the /public/all photos/ folder
+    if (err) {
+        return console.error("Unable to scan directory: " + err);
+    }
+    files.forEach(file => {
+        const photosDirUrl = "/all photos";
+        const imgUrl = encodeURI(`${photosDirUrl}/${file}`); //encodes the whole URL
+
+        const btn = document.createElement('button');
+        btn.classList.add('clickable');
+
+        const img = document.createElement('img');
+        img.src = imgUrl;
+        img.alt = imgUrl;
+        arr.push(imgUrl);
+
+        const container = document.createElement('div');
+
+        container.classList.add('grid-item');
+        container.classList.add('fade-on-scroll')
+
+        container.appendChild(btn);
+        btn.appendChild(img)
+
+        const grid = document.getElementsByClassName('grid')[0];
+        grid.appendChild(container);
+
+    });
+    document.getElementsByClassName('grid_container')[0].appendChild(grid)
+    fs.writeFileSync(htmlPath, dom.serialize(), 'utf-8'); //dom.serialize() take the in-memory of DOM and coverts it back into a string of HTML
+});
+
+
+app.use(express.static(path.join(__dirname + '/public'))); //serves files from public folder when app starts
+
+app.use((req, res) => { // if the status of the request is 404
+    res.status(404);
+    res.send('<h1>Error 404: Resource not found<h1>') //sends an html page 
+})
+app.listen(3000, () => { //logs the console if the html page launches
+    console.log("App listening on port 3000")
+})
