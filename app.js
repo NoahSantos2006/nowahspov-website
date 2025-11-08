@@ -22,7 +22,7 @@ fs.readdir(dirPath, (err, files) => { //iterates through the /public/all photos/
         return console.error("Unable to scan directory: " + err);
     }
     files.forEach(file => {
-        const photosDirUrl = "/all photos";
+        const photosDirUrl = "/index-photos";
         const imgUrl = encodeURI(`${photosDirUrl}/${file}`); //encodes the whole URL
 
         const btn = document.createElement('button');
