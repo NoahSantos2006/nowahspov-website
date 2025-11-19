@@ -26,36 +26,56 @@
         <div class="contact-section-container">
             <div class="contact-main">
 
-                <div class="contact-name">
-                    <div class="contact-first-name-container">
-                        <div class="contact-first-name">
-                            <div class="contact-text-first-name">First Name</div>
-                            <input class="contact-input-first-name" type="text" name="first" autocomplete="off" required>
+                <form 
+                    action="https://formspree.io/f/mqanbljq"
+                    method="POST"
+                >
+                    <div class="contact-text">Contact</div>
+
+                    <div class="contact-name">
+                        <div class="contact-name-text">Name</div>
+                        <div class="contact-first-name-container">
+                            <div class="contact-first-name">
+                                <div class="contact-text-first-name">
+                                    <div>First Name&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="required-text">(required)</div>
+                                </div>
+                                <input class="contact-input-first-name" type="text" name="first" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="contact-last-name-container">
+                            <div class="contact-last-name">
+                                <div class="contact-text-last-name">
+                                    <div>Last Name&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="required-text">(required)</div>
+                                </div>
+                                <input class="contact-input-last-name" type="text" name="last" autocomplete="off" required>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-last-name-container">
-                        <div class="contact-last-name">
-                            <div class="contact-text-last-name">Last Name</div>
-                            <input class="contact-input-last-name" type="text" name="last" autocomplete="off" required>
+
+
+                    <div class="contact-email">
+                        <div class="contact-text-email">
+                            <div>Email&nbsp;&nbsp;&nbsp;</div>
+                            <div class="required-text">(required)</div>
                         </div>
+                        <input class="contact-input-email" type="email" name="email" autocomplete="off" required>
                     </div>
-                </div>
 
+                    <div class="contact-message">
+                        <div class="contact-text-message">
+                            <div>Message&nbsp;&nbsp;&nbsp;</div>
+                            <div class="required-text">(required)</div>
+                        </div>
+                        <textarea class="contact-input-message" class="contact-message" rows="8" cols="40" type="text" name="message" autocomplete="off" required></textarea>
+                    </div>
 
-                <div class="contact-email">
-                    <div class="contact-text-email">Email</div>
-                    <input class="contact-input-email" type="email" name="email" autocomplete="off" required>
-                </div>
+                    <div class="submit-button-container">
+                        <button class="submit-button" type="submit">Send</button>
+                    </div>
 
-                <div class="contact-message">
-                    <div class="contact-text-message">Message</div>
-                    <textarea class="contact-input-message" class="contact-message" rows="5" cols="40" type="text" name="message" autocomplete="off" required></textarea>
-                </div>
-
-                <div class="submit-button-container">
-                    <button class="submit-button" type="submit">Send</button>
-                </div>
-
+                </form>
             </div>
         </div>
 

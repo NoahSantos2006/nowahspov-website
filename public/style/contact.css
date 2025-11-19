@@ -30,7 +30,7 @@ body {
         height: 606.53px;
         object-fit: cover;
     }
-    margin-bottom: 100px;
+    margin-bottom: 25px;
 }
 
 h1 {
@@ -114,13 +114,49 @@ a {
 }
 
 .contact-section-container {
-    height: 500px;
+    margin-bottom: 100px;
+
+}
+
+.contact-text {
+    width: 70%;
+    justify-self: center;
+    text-align: left;
+    color: black;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 30px;
+    opacity: 70%;
 }
 
 .contact-name {
-    margin-top: 150px;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.required-text {
+    color: black;
+    opacity: 40%;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: left;
+}
+
+.contact-name-text {
+    width: 70%;
+    justify-self: center;
+    text-align: left;
+    color: black;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 70%;
 }
 
 .contact-first-name-container {
@@ -135,11 +171,16 @@ a {
 }
 
 .contact-text-first-name {
+    color: black;
+    opacity: 70%;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     text-align: left;
-    left: 5px;
+    margin-bottom: 10px;
 }
 
 .contact-input-first-name {
@@ -158,11 +199,16 @@ a {
 }
 
 .contact-text-last-name {
+    color: black;
+    opacity: 70%;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     text-align: left;
-    left: 5px;
+    margin-bottom: 10px;
 }
 
 .contact-input-last-name {
@@ -178,15 +224,20 @@ a {
 }
 
 .contact-text-email {
+    color: black;
+    opacity: 70%;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     text-align: left;
-    left: 5px;
+    margin-bottom: 10px;
 }
 
 .contact-input-email {
-    height: 45px;;
+    height: 45px;
 }
 
 .contact-message {
@@ -198,11 +249,16 @@ a {
 }
 
 .contact-text-message {
+    color: black;
+    opacity: 70%;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     text-align: left;
-    left: 5px;
+    margin-bottom: 10px;
 }
 
 .contact-input-message {
@@ -230,6 +286,7 @@ a {
     bottom: 0;
 }
 .bottom-section-title {
+    color: #687169;
     position: absolute;
     left: 1vw;
 }
