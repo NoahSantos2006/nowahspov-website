@@ -4,6 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    min-width: 535px;
 }
 
 .header {
@@ -113,72 +114,112 @@ a {
 }
 
 .contact-section-container {
-    width: 100%;
-    height: 800px;
-    text-align: center;
+    height: 500px;
 }
 
-.contact-main {
-    gap: 10px;
+.contact-name {
+    margin-top: 150px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-first-name-container {
+    display: inline-block;
+    width: 35%;
+}
+
+.contact-first-name {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
 }
 
 .contact-text-first-name {
-    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    margin-left: 205px;
-}
-
-.contact-text-last-name {
-    width: 100px;
-    position: relative;
-    margin-left: 72px;
-
+    text-align: left;
+    left: 5px;
 }
 
 .contact-input-first-name {
+    height: 45px;
+}
+
+.contact-last-name-container {
+    display: inline-block;
+    width: 35%;
+}
+
+.contact-last-name {
     position: relative;
-    height: 40px;
-    width: 600px;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.contact-text-last-name {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: left;
+    left: 5px;
 }
 
 .contact-input-last-name {
-    position: relative;
-    text-align: center;
-    height: 40px;
-    width: 600px;
+    height: 45px;
+}
+
+.contact-email {
+    justify-self: center;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    width: 70.4%;
+    margin-bottom: 30px;
 }
 
 .contact-text-email {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    color: none;
+    text-align: left;
+    left: 5px;
 }
 
 .contact-input-email {
-    position: relative;
-    margin-top: 30px;
-    height: 40px;
-    width: 1218px;
+    height: 45px;;
+}
+
+.contact-message {
+    justify-self: center;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    width: 70.4%;
+    margin-bottom: 30px;
 }
 
 .contact-text-message {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    color: none;
+    text-align: left;
+    left: 5px;
 }
 
 .contact-input-message {
     position: relative;
-    width: 1218px;
-    height: 80px;
+    resize: none;
 }
-.contact-message {
-    position: relative;
-    flex-basis: 100%;
-    width: 1218px;
+
+.submit-button-container {
+    width: 70.4%;
+    justify-self: center;
 }
 
 .submit-button {
-    position: relative;
-    color: none;
+    background-color: black;
+    color: white;
+    width: 80px;
+    height: 50px
 }
 
 .bottom-section {
