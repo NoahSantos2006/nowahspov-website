@@ -1,0 +1,142 @@
+body {
+    background-color: #d0d9cd;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #a9ba9d;
+    height: 125px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+h1 {
+    color: #687169;
+    transform: translateY(20px) translateX(20px);
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0;
+}
+h2 {
+    transform: translateY(23px) translateX(50px);
+    color: #687169;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+h3 {
+    transform: translateY(23px) translateX(75px);
+    color: #687169;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+h4 {
+    transform: translateY(23px) translateX(100px);
+    color: #687169;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.header-insta-icon {
+    position: absolute;
+    transform: translateY(23px) scale(0.05);
+    right: 0;
+}
+.header-tiktok-icon {
+    position: absolute;
+    transform: translateY(22.8px) scale(0.09);
+    right: 4vw;
+}
+a {
+    text-decoration: none;
+}
+
+.middle-section {
+    position: relative;
+    display: flex;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+.about {
+    width: 45vw;
+    transform: translateX(15px);
+    margin-left: 50px;
+}
+.about-text {
+    font-size: 30px;
+    font-family: sans-serif;
+    line-height: 1.8;
+    color: #687169;
+}
+
+.portrait-image-container {
+    margin-left: 100px;
+}
+.portrait-image-container img {
+    width: 40vw;
+    height: auto;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .middle-section {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about {
+        width: 90%;
+    }
+    
+
+}
+
+
+.bottom-section {
+    position: relative;
+    background-color: #a9ba9d;
+    height: 200px;
+    width: 100vw;
+    bottom: 0;
+    margin-top: 100px;
+}
+.bottom-section-title {
+    left: 1vw;
+}
+
+.bottom-section-insta-icon {
+    position: absolute;
+    right: 12.9vw;
+}
+.bottom-section-insta-icon img {
+    width: 20px;
+    height: auto;
+}
+
+.bottom-section-tiktok-icon {
+    position: absolute;
+    right: 10.2vw;
+}
+.bottom-section-tiktok-icon img {
+    width: 20px;
+    height: auto;
+}
+
+
+.fade-out{
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in{
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}

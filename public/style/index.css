@@ -39,6 +39,7 @@ img {
         height: 200px;
     }
 }
+
 @media only screen and (max-width:768px) {
     h2 {
         display: none;
@@ -50,6 +51,7 @@ img {
         display: none;
     }
 }
+
 @media (max-width:728px) {
     .grid {
         column-count: 2;
