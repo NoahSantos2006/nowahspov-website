@@ -1,0 +1,204 @@
+body {
+    background-color: #d0d9cd;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.header {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 125px;
+    width: 100vw;
+    position: relative;
+    top: 0;
+}
+
+
+.header-image {
+    margin-top: -125px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    img {
+        width: 100%;
+        height: 606.53px;
+        object-fit: cover;
+    }
+    margin-bottom: 100px;
+}
+
+h1 {
+    color: #485d45;
+    transform: translateY(20px) translateX(20px);
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0;
+}
+h2 {
+    transform: translateY(23px) translateX(50px);
+    color: #485d45;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2;
+}
+h3 {
+    transform: translateY(23px) translateX(75px);
+    color: #485d45;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2;
+}
+h4 {
+    transform: translateY(23px) translateX(100px);
+    color: #485d45;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2;
+}
+.header-insta-icon {
+    position: absolute;
+    transform: translateY(23px) scale(0.05);
+    right: 0;
+    z-index: 2;
+}
+.header-tiktok-icon {
+    position: absolute;
+    transform: translateY(22.8px) scale(0.09);
+    right: 4vw;
+}   
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width:768px) {
+    h2 {
+        display: none;
+    }
+    h3 {
+        display: none;
+    }
+    h4 {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    .header-insta-icon {
+        display: none;
+    }
+    .header-tiktok-icon {
+        display: none;
+    }
+    .section-insta-icon {
+        display: none;
+    }
+    .section-tiktok-icon {
+        display: none;
+    }
+    .bottom-section-insta-icon {
+        display: none;
+    }
+    .bottom-section-tiktok-icon {
+        display: none;
+    }
+}
+
+.contact-section-container {
+    width: 100%;
+    height: 800px;
+    text-align: center;
+}
+
+.contact-main {
+    gap: 10px;
+}
+
+.contact-text-first-name {
+    width: 100px;
+    position: relative;
+    margin-left: 205px;
+}
+
+.contact-text-last-name {
+    width: 100px;
+    position: relative;
+    margin-left: 72px;
+
+}
+
+.contact-input-first-name {
+    position: relative;
+    height: 40px;
+    width: 600px;
+}
+
+.contact-input-last-name {
+    position: relative;
+    text-align: center;
+    height: 40px;
+    width: 600px;
+}
+
+.contact-text-email {
+    position: relative;
+    color: none;
+}
+
+.contact-input-email {
+    position: relative;
+    margin-top: 30px;
+    height: 40px;
+    width: 1218px;
+}
+
+.contact-text-message {
+    position: relative;
+    color: none;
+}
+
+.contact-input-message {
+    position: relative;
+    width: 1218px;
+    height: 80px;
+}
+.contact-message {
+    position: relative;
+    flex-basis: 100%;
+    width: 1218px;
+}
+
+.submit-button {
+    position: relative;
+    color: none;
+}
+
+.bottom-section {
+    position: relative;
+    background-color: #a9ba9d;
+    height: 200px;
+    width: 100vw;
+    bottom: 0;
+}
+.bottom-section-title {
+    position: absolute;
+    left: 1vw;
+}
+.bottom-section-insta-icon {
+    position: absolute;
+    transform: translateY(-184px) scale(0.05);
+    right: 0vw;
+}
+.bottom-section-tiktok-icon {
+    position: absolute;
+    transform: translateY(-74px) scale(0.09);
+    right: 4vw;
+}
